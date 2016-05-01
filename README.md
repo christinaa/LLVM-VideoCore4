@@ -19,7 +19,7 @@ For now, you should just build `LLC` and use a stock Clang that can target Video
 
 `VASM` requires a small patch in order to work but since the license does not allow redistribution of modifications, I cannot include it, but to summarise in the VideoCore `cpu.c` file, in `translate` the handler for for 48 bit arithmetic instructions needs to have the first conditional commented out (the one that checks if the instruction number is less than 32).
 
-Once you build `VASM` and `VLINK` and applied this patch, you can use it as shown in the Makefile excerpt here:
+Once you applied this patch and built `VASM` and `VLINK`, you can use it as shown in the Makefile excerpt here:
 ```
 CC = clang
 CXX = clang++
