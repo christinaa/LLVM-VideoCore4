@@ -1,6 +1,8 @@
 ## LLVM for VideoCore4
 This is mostly based on the work done by David Given (cowlark). It works, and can compile and produce reasonable code. I did this so I could have a decent compiler to develop my Raspberry Pi firmware on.
 
+The actual VideoCore4 target is in `lib/Target/VideoCore4/`. To build this, you'll need to use **CMake**.
+
 ### What works
 * Pretty much everything that isn't listed under the 'Issues' section. Some corner cases may still lead to LLC errors such as using certain builtins.
 
