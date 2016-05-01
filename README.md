@@ -1,9 +1,13 @@
 ## LLVM for VideoCore4
 This is mostly based on the work done by David Given (cowlark). It works, and can compile and produce reasonable code. I did this so I could have a decent compiler to develop my Raspberry Pi firmware on.
 
+### What works
+* Pretty much everything that isn't listed under the 'Issues' section. Some corner cases may still lead to LLC errors such as using certain builtins.
+
 ### Issues
 * Variable length arrays do not work (because of FP not being implemented)
 * MC code emisssion is not supported
+* Use any floating point arithmetic at your own risk, I have not tested it
 * BB reordering is not implemented so you'll have to live with redundant branches being generated
 * TableGen code is not ideal, I tried to improve it and get rid of some of the hacks used in the original one but there's still a long way to go.
 * Some directives emmited by `LLC` confuse `VASM` so at the moment I just `sed` them out in the Makefile (I've included an example).
