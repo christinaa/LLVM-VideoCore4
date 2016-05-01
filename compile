@@ -1,0 +1,4 @@
+#!/bin/sh
+clang -S -O3 -emit-llvm -m32 test.c -o test.i
+./Debug+Asserts+Checks/bin/llc -asm-verbose -O2 --mtriple vc4 test.i
+
