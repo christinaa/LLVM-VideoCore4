@@ -15,7 +15,7 @@ The actual VideoCore4 target is in `lib/Target/VideoCore4/`. To build this, you'
 * Some directives emmited by `LLC` confuse `VASM` so at the moment I just `sed` them out in the Makefile (I've included an example).
 
 ### Using it
-For now, you should just build `LLC` and use a stock Clang that can target VideoCore. As the VideoCore4 target does not currently support MC code emission, you will have to rely on an external assembler/linker, namely `VASM` and `VLINK`. 
+For now, you should just build `LLC` and use a stock Clang that can target XCore and emit LL files. As the VideoCore4 target does not currently support MC code emission, you will have to rely on an external assembler/linker, namely `VASM` and `VLINK`. 
 
 `VASM` requires a small patch in order to work but since the license does not allow redistribution of modifications, I cannot include it, but to summarise in the VideoCore `cpu.c` file, in `translate` the handler for for 48 bit arithmetic instructions needs to have the first conditional commented out (the one that checks if the instruction number is less than 32).
 
